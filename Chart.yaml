@@ -3,10 +3,8 @@ name: namespaces
 version: 1.0.0
 description: Helm chart to create namespaces and ServiceAccounts
 type: application
-home: The URL of this projects home page (optional)
-sources:
-  - "https://github.com/cloud-labs-infra/helm-namespaces"
-maintainers: # (optional)
+home: "https://github.com/cloud-labs-infra/helm-namespaces"
+maintainers:
   - name: Mikhail Vintcukevich
     url: "https://github.com/Mishavint"
   - name: Egor Vasilyev

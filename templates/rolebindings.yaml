@@ -4,7 +4,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: admin-{{ $serviceaccount }}-{{ $namespace.name }}-binding
+  name: admin-{{ $serviceaccount }}-{{ $namespace.name }}
   namespace: {{ $namespace.name }}
 subjects:
   - kind: ServiceAccount

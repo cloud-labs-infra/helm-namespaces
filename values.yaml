@@ -1,11 +1,13 @@
-# Default values for sa-chart.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-namespaces:
-  - name: namespace1
-    serviceaccounts:
-      - sa1
-      - sa2
-  - name: namespace2
-    serviceaccounts: [ sa1, sa3 ]
+# variable below represent a list of namespaces
+# with a list of serviceaccounts in respective namespace
+#
+# each service account has admin access to his namespace
+#
+#namespaces:
+#  - name: namespace1
+#    serviceaccounts:
+#      - sa1
+#      - sa2
+#  - name: namespace2
+#    serviceaccounts: [ sa1, sa3 ]
+namespaces: []

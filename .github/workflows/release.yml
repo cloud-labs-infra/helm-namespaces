@@ -38,7 +38,6 @@ jobs:
           sed 's/^version.*$/version: ${{ steps.semantic.outputs.new_release_version }}/' Chart.yaml
 
       - name: Release
-        id: semantic
         uses: cycjimmy/semantic-release-action@v3
         with:
           semantic_version: 18.0.0

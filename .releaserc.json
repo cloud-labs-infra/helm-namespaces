@@ -1,7 +1,6 @@
 {
   "branches": [
-    "main",
-    "issue-1/initial"
+    "main"
   ],
   "ci": false,
   "plugins": [

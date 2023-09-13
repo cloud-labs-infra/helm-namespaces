@@ -21,14 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check release version
-        run: |
-
-      - name: Release
+      - name: Obtain release version
         id: semantic
         uses: cycjimmy/semantic-release-action@v3
         with:
-          dry_run: true # try to obtain release version
+          dry_run: true
           ci: false
           semantic_version: 18.0.0
           extra_plugins: |
@@ -36,6 +33,16 @@ jobs:
             @semantic-release/git@10.0.0
             conventional-changelog-conventionalcommits@4.6.3
 
-      - name: Check output
+      - name: Update chart version
         run: |
-          echo ${{ steps.semantic.outputs.new_release_version }}
+          sed 's/^version.*$/version: ${{ steps.semantic.outputs.new_release_version }}/' Chart.yaml
+
+      - name: Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v3
+        with:
+          semantic_version: 18.0.0
+          extra_plugins: |
+            @semantic-release/changelog@6.0.0
+            @semantic-release/git@10.0.0
+            conventional-changelog-conventionalcommits@4.6.3

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sed "s/^version.*\$/version: ${1}/" "${2}"
+sed -e "s/^version.*\$/version: ${1}/" "${2}"

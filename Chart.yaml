@@ -1,0 +1,12 @@
+apiVersion: v2
+name: namespaces
+# version will be changed by ci
+version: 0.1.0
+description: Helm chart to create namespaces and ServiceAccounts
+type: application
+home: "https://github.com/cloud-labs-infra/helm-namespaces"
+maintainers:
+  - name: Mikhail Vintcukevich
+    url: "https://github.com/Mishavint"
+  - name: Egor Vasilyev
+    url: "https://github.com/bissquit"

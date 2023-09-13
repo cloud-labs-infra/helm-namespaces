@@ -1,0 +1,22 @@
+1.
+{{- range $namespace := .Values.namespaces }}
+Namespace {{ $namespace.name }} was created
+{{- end }}
+2.
+{{- range $namespace := .Values.namespaces }}
+{{- range $serviceaccount := $namespace.serviceaccounts }}
+ServiceAccount for {{ $serviceaccount }} in {{ $namespace.name }} namespace was created
+{{- end }}
+{{- end }}
+3.
+{{- range $namespace := .Values.namespaces }}
+{{- range $serviceaccount := $namespace.serviceaccounts }}
+Secret for {{ $serviceaccount }} in {{ $namespace.name }} namespace was created
+{{- end }}
+{{- end }}
+4.
+{{- range $namespace := .Values.namespaces }}
+{{- range $serviceaccount := $namespace.serviceaccounts }}
+RoleBinding for {{ $serviceaccount }} in {{ $namespace.name }} namespace was created
+{{- end }}
+{{- end }}

@@ -25,7 +25,7 @@ jobs:
 #        run: |
 #          sed 's/^version.*$/version: ${{ steps.semantic.outputs.new_release_version }}/' Chart.yaml
 
-      - run: npm install @semantic-release/exec -D
+      - run: npm install @semantic-release/exec@6.0.3 -D
 
       - name: Release
         uses: cycjimmy/semantic-release-action@v4

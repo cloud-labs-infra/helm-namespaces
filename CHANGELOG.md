@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.2...v1.1.0) (2023-09-13)
+
+
+### Features
+
+* add params ([dbaf681](https://github.com/cloud-labs-infra/helm-namespaces/commit/dbaf681123d1697092112695d415ac3aa1acfdaa))
+
 ### [1.0.2](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.1...v1.0.2) (2023-09-13)
 
 

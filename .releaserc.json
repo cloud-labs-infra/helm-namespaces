@@ -35,7 +35,8 @@
     [
       "@semantic-release/exec",
       {
-        "verifyConditionsCmd": "chmod 777 ./.github/workflows/update_chart.sh ; ./.github/workflows/update_chart.sh 1.0.1 ; cat Chart.yaml"
+        "verifyConditionsCmd": "echo ${nextRelease.version}",
+        "prepareCmd": "chmod 777 ./.github/workflows/update_chart.sh ; ./.github/workflows/update_chart.sh 1.0.1 ; cat Chart.yaml"
       }
     ],
     [

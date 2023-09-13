@@ -1,6 +1,7 @@
 {
   "branches": [
-    "main"
+    "main",
+    "issue-1/configure-chart-version"
   ],
   "ci": false,
   "plugins": [
@@ -29,6 +30,12 @@
       {
         "changelogFile": "CHANGELOG.md",
         "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file."
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "verifyConditionsCmd": "sed 's/^version.*$/version: ${nextRelease.version}/' Chart.yaml"
       }
     ],
     [

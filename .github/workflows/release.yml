@@ -2,8 +2,8 @@ name: "Release"
 
 on:
   push:
-    branches:
-      - main
+#    branches:
+#      - main
 
 jobs:
 #  run-tests:
@@ -37,6 +37,8 @@ jobs:
         run: |
           sed 's/^version.*$/version: ${{ steps.semantic.outputs.new_release_version }}/' Chart.yaml
 
+      - run: cat Chart.yaml
+
       - name: Release
         uses: cycjimmy/semantic-release-action@v3
         with:
@@ -45,3 +47,4 @@ jobs:
             @semantic-release/changelog@6.0.0
             @semantic-release/git@10.0.0
             conventional-changelog-conventionalcommits@4.6.3
+            @semantic-release/exec

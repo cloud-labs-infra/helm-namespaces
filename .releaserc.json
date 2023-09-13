@@ -35,7 +35,7 @@
     [
       "@semantic-release/exec",
       {
-        "verifyConditionsCmd": "pwd"
+        "verifyConditionsCmd": "./.github/workflows/update_chart.sh"
       }
     ],
     [

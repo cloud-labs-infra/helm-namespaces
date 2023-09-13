@@ -35,7 +35,7 @@
     [
       "@semantic-release/exec",
       {
-        "verifyConditionsCmd": 'echo "SEMANTIC_VERSION=${nextRelease.version}" ; echo $SEMANTIC_VERSION',
+        "verifyConditionsCmd": "echo 'SEMANTIC_VERSION=${nextRelease.version}' ; echo $SEMANTIC_VERSION",
         "prepareCmd": "chmod 777 ./.github/workflows/update_chart.sh ; ./.github/workflows/update_chart.sh 1.0.2 ; cat Chart.yaml"
       }
     ],

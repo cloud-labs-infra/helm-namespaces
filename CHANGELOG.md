@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.1](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.1.0...v1.1.1) (2023-09-13)
+
+
+### Bug Fixes
+
+* Update .releaserc.json ([6458243](https://github.com/cloud-labs-infra/helm-namespaces/commit/645824334b649b4e1d388f97e5e377cc89d355c6))
+
 ## [1.1.0](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.2...v1.1.0) (2023-09-13)
 
 

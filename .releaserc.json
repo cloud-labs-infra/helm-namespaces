@@ -32,6 +32,12 @@
       }
     ],
     [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "sed -i 's/^version.*$/version: ${nextRelease.version}/' Chart.yaml ; cat Chart.yaml"
+      }
+    ],
+    [
       "@semantic-release/git",
       {
         "assets": [

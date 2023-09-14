@@ -35,7 +35,7 @@
     [
       "@semantic-release/exec",
       {
-        "publishCmd": "chmod 777 ./.github/workflows/update_chart.sh ; ./.github/workflows/update_chart.sh ${nextRelease.version}"
+        "publishCmd": "sed -i 's/^version.*$/version: ${nextRelease.version}/' Chart.yaml"
       }
     ],
     [

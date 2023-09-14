@@ -1,7 +1,6 @@
 {
   "branches": [
-    "main",
-    "issue-1/configure-chart-version"
+    "main"
   ],
   "ci": false,
   "plugins": [

@@ -35,7 +35,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": [
+        "publishCmd": [
           "sed -i 's/^version.*$/version: ${nextRelease.version}/' Chart.yaml",
           "cat Chart.yaml"
         ]

@@ -1,0 +1,33 @@
+name: "Run tests"
+
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  run-linters:
+    name: "Run linters"
+    runs-on: ubuntu-20.04
+    container: alpine/helm:3.12.3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run linters
+        run: |
+          helm lint chart/
+
+  run-k8s-validation:
+    name: "Run Kubernetes validation"
+    runs-on: ubuntu-20.04
+    container: alpine/helm:3.12.3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Prepare environment
+        run: |
+          wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar xf kubeval-linux-amd64.tar.gz
+          cp kubeval /usr/local/bin
+      - name: Validate k8s objects
+        run:

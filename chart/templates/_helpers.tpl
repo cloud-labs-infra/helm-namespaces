@@ -2,7 +2,7 @@
 Common labels
 */}}
 {{- define "common.labels" -}}
-helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-app.kubernetes.io/instance: {{ .Release.Name }}
+helm.sh/chart: {{ .ChartName }}-{{ .ChartVersion | replace "+" "_" }}
+app.kubernetes.io/managed-by: {{ .ReleaseService }}
+app.kubernetes.io/instance: {{ .ReleaseName }}
 {{- end }}

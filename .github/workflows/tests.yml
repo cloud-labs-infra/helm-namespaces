@@ -33,7 +33,7 @@ jobs:
           docker run --rm \
                      -v "$(pwd):/data" \
                      --workdir /data \
-                     ${DOCKER_IMAGE_HELM} template chart > ${MANIFEST_OUTPUT_FILE_NAME}
+                     ${DOCKER_IMAGE_HELM} template chart | tee ${MANIFEST_OUTPUT_FILE_NAME}
 
       - name: Validate manifests
         run: |

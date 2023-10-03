@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.3](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.2...v1.0.3) (2023-10-03)
+
+
+### Bug Fixes
+
+* helm linters and validators added ([#10](https://github.com/cloud-labs-infra/helm-namespaces/issues/10)) ([d52276a](https://github.com/cloud-labs-infra/helm-namespaces/commit/d52276a5ade0b13dbbea3f0fc404e94980ca2d1a))
+
 ### [1.0.2](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.1...v1.0.2) (2023-09-14)
 
 

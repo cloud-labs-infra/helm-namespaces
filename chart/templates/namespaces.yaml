@@ -1,14 +1,3 @@
-# we can't use top-level scope variables directly in ranges because
-# leading dot points to loop-level scope here
-# https://github.com/helm/helm/issues/1054
-# https://github.com/helm/helm/issues/3684
-{{- $data := dict
-  "ChartName"       .Chart.Name
-  "ChartVersion"    .Chart.Version
-  "ReleaseName"     .Release.Name
-  "ReleaseService"  .Release.Service
--}}
-
 {{- range $namespace := .Values.namespaces }}
 ---
 apiVersion: v1
@@ -17,21 +6,6 @@ metadata:
   name: {{ $namespace.name }}
   labels:
     name: {{ $namespace.name }}
-    {{- include "common.labels" $data | nindent 4 }}
+    {{- include "common.labels" $.Chart | nindent 4 }}
+    {{- include "common.labelsrelease" $.Release | nindent 4 }}
 {{- end }}
-
-{{- range $namespace := .Values.namespaces }}
-{{- range $serviceaccount := $namespace.serviceaccounts }}
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: {{ $serviceaccount }}
-  namespace: {{ $namespace.name }}
-  annotations:
-    kubernetes.io/service-account.name: {{ $serviceaccount }}
-  labels:
-    {{- include "common.labels" $data | nindent 4 }}
-type: kubernetes.io/service-account-token
-{{ end }}
-{{ end }}

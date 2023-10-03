@@ -7,6 +7,11 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  DOCKER_IMAGE_HELM: alpine/helm:3.12.3
+  DOCKER_IMAGE_KUBECONFORM: ghcr.io/yannh/kubeconform:latest-alpine
+  MANIFEST_OUTPUT_FILE_NAME: k8s-objects.yaml
+
 jobs:
   run-linters:
     name: "Run linters"
@@ -21,16 +26,18 @@ jobs:
   run-k8s-validation:
     name: "Run Kubernetes validation"
     runs-on: ubuntu-20.04
-#    container: alpine/helm:3.12.3
     steps:
       - uses: actions/checkout@v3
       - name: Generate manifests
         run: |
+          docker run --rm \
+                     -v "$(pwd):/data" \
+                     --workdir /data \
+                     ${DOCKER_IMAGE_HELM} template chart > ${MANIFEST_OUTPUT_FILE_NAME}
 
-#      - name: Prepare environment
-#        run: |
-#          wget https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
-#          tar xf kubeval-linux-amd64.tar.gz
-#          cp kubeval /usr/local/bin
-#      - name: Validate k8s objects
-#        run:
+      - name: Validate manifests
+        run: |
+          docker run --rm \
+                     -v "$(pwd):/data" \
+                     --workdir /data \
+                     ${DOCKER_IMAGE_KUBECONFORM} -debug -output json -summary ${MANIFEST_OUTPUT_FILE_NAME}

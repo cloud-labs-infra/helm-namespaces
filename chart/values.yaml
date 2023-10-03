@@ -9,5 +9,8 @@
 #      - sa1
 #      - sa2
 #  - name: namespace2
-#    serviceaccounts: [ sa1, sa3 ]
-namespaces: []
+#    serviceaccounts: [ sa3 ]
+namespaces:
+  - name: helm-namespaces
+    serviceaccounts:
+      - helm-namespaces

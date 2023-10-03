@@ -34,7 +34,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "sed -i 's/^version.*$/version: ${nextRelease.version}/' Chart.yaml ; cat Chart.yaml"
+        "prepareCmd": "sed -i 's/^version.*$/version: ${nextRelease.version}/' chart/Chart.yaml ; cat chart/Chart.yaml"
       }
     ],
     [
@@ -42,7 +42,7 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "Chart.yaml"
+          "chart/Chart.yaml"
         ],
         "message": "chore(release): version ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }

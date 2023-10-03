@@ -6,5 +6,6 @@ metadata:
   name: {{ $namespace.name }}
   labels:
     name: {{ $namespace.name }}
-    {{- include .common.labels | nindent 4 }}
+    {{- include "common.labels" $.Chart | nindent 4 }}
+    {{- include "common.labelsrelease" $.Release | nindent 4 }}
 {{- end }}

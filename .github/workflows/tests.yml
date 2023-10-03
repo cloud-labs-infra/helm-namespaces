@@ -24,7 +24,7 @@ jobs:
           helm lint chart/
 
   run-k8s-validation:
-    name: "Run Kubernetes validation"
+    name: "Run manifest validation"
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3

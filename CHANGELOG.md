@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.5](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.4...v1.0.5) (2023-12-27)
+
+
+### Bug Fixes
+
+* changed apiGroup in rolebinding resource ([#13](https://github.com/cloud-labs-infra/helm-namespaces/issues/13)) ([b5bbfdf](https://github.com/cloud-labs-infra/helm-namespaces/commit/b5bbfdfe9c0cd9dbf9e74176cdf88ff956f4bfc1))
+
 ### [1.0.4](https://github.com/cloud-labs-infra/helm-namespaces/compare/v1.0.3...v1.0.4) (2023-10-09)
 
 
